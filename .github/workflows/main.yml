@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  prod_ip_ubuntu: 192.168.1.112
+
 jobs:
   terraformec2:
     runs-on: ubuntu-latest
