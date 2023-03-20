@@ -22,6 +22,11 @@ jobs:
         run: terraform init
       - name: Apply Terraform
         run: terraform apply --auto-approve
+        if: github.ref != 'refs/heads/master'
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Install Ansible
         run: sudo apt-get update && sudo apt-get install -y ansible
       - name: Configure EC2
