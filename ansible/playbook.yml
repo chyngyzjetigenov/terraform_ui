@@ -26,7 +26,6 @@
 
     - name: Install Docker
       apt:
-        name: docker.io
         name: docker-ce
         state: present
 
