@@ -1,6 +1,4 @@
 all:
-  hosts:
-    my_ec2_instance:
-      ansible_host: 192.168.1.112
-      ansible_user: linux
-      ansible_ssh_private_key_file: SSH_PRIVATE_KEY
+   hosts:
+     Ubuntu:
+       ansible_host: '{{ lookup("env","prod_ip_ubuntu") }}'
